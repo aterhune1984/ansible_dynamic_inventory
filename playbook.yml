@@ -1,0 +1,14 @@
+---
+- name: Example playbook
+  hosts: all
+  gather_facts: false
+  vars:
+    ansible_python_interpreter: /usr/bin/python3.9
+  tasks:
+    - name: Run a command
+      command: echo "Hello, world!"
+      register: command_output
+
+    - name: Display command output
+      debug:
+        var: command_output.stdout
